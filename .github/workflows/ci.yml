@@ -11,24 +11,24 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version-file: '.node-version'
 
       - name: Install ci
-        run: yarn ci
+        run: npm ci
 
       - name: Build project
-        run: yarn run build
+        run: npm run build
 
       - name: Deploy project
-        run: yarn run deploy
+        run: npm run deploy
       
       - name: Test
-        run: yarn test
+        run: npm test
 
       - name: Lint
-        run: yarn run lint
+        run: npm run lint
