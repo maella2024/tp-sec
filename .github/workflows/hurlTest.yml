@@ -14,7 +14,7 @@ jobs:
       # Installation de Hurl
       - name: Install Hurl
         run: |
-          curl -L https://github.com/Orange-OpenSource/hurl/releases/latest/download/hurl-linux-x86_64.tar.gz | tar xz && sudo mv hurl /usr/local/bin/
+          curl -L https://github.com/Orange-OpenSource/hurl/releases/latest/download/hurl-linux-x86_64.tar.gz -o hurl.tar.gz
           tar -xzf hurl-linux-x86_64.tar.gz
           chmod +x hurl/bin/hurl
           sudo mv hurl/bin/hurl /usr/local/bin/
