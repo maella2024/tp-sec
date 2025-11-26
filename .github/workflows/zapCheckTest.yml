@@ -1,0 +1,25 @@
+name: Zap CheckMark Tests
+
+on: push
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout du code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Scan ZAP Baseline
+      - name: Base scan
+        uses: zaproxy/action-baseline@v0.15.0
+        #with:
+          #target: "https://example.com"
+
+      # Upload du rapport HTML généré par ZAP
+      - name: Upload Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: zap-report
+          path: report.html
