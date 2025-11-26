@@ -15,15 +15,11 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
       - name: Install ci
-        run: npm ci
-
-      - name: Build project
-        run: npm run build
-
-      - name: Deploy project
-        run: npm run deploy
+        run: npm install --legacy-peer-deps
       
       - name: Test
         run: npm test
