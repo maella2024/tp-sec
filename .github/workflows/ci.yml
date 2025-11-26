@@ -19,19 +19,16 @@ jobs:
           node-version-file: '.node-version'
 
       - name: Install ci
-        run: npm ci
-      
-      - name: Install dependencies
-        run: npm install
+        run: yarn ci
 
       - name: Build project
-        run: npm run build
+        run: yarn run build
 
       - name: Deploy project
-        run: npm run deploy
+        run: yarn run deploy
       
       - name: Test
-        run: npm test
+        run: yarn test
 
       - name: Lint
-        run: npm run lint
+        run: yarn run lint
