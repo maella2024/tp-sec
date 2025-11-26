@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v5
         with:
-          node-version-file: '.node-version'
+          node-version: 20
 
       - name: Install ci
         run: npm ci
